@@ -29,3 +29,10 @@ Feature: Validaciones a API (Petstore Swagger)
     Then status 200
     And match response.name == 'PugCarlino_Luna'
 
+  Scenario: (CA04) Verificar el nombre de la mascota actualizada
+    Given path 'pet/' + newPet.id
+    When method GET
+    Then status 200
+    And match response.name == 'PugCarlino_Luna'
+
+
