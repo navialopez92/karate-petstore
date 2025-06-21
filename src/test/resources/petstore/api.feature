@@ -11,3 +11,9 @@ Scenario: (CA01) Adicionar nueva mascota con fichero JSON
  Then status 200
  And match response.id == newPet.id
  And match response.name == newPet.name
+
+Scenario: (CA02) Verificar que la mascota se adicionó satisfactoriamente
+ Given path 'pet/' + newPet.id
+ When method GET
+ Then status 200
+ And match response.name == newPet.name
