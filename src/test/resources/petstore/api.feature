@@ -13,7 +13,7 @@ Feature: Validaciones a API (Petstore Swagger)
     And match response.name == newPet.name
 
   Scenario: (CA02) Verificar que la mascota se adicionó satisfactoriamente
-    Given path 'pet/' + newPet.id
+    Given path 'pet/', newPet.id
     When method GET
     Then status 200
     And match response.name == newPet.name
@@ -23,16 +23,27 @@ Feature: Validaciones a API (Petstore Swagger)
     * def newName = 'PugCarlino_Luna'
     * updatedPet.name = newName
 
-    Given path '/pet'
+    Given path 'pet'
     And request updatedPet
     When method PUT
     Then status 200
     And match response.name == 'PugCarlino_Luna'
 
   Scenario: (CA04) Verificar el nombre de la mascota actualizada
-    Given path 'pet/' + newPet.id
+    Given path 'pet/', newPet.id
     When method GET
     Then status 200
     And match response.name == 'PugCarlino_Luna'
+
+  Scenario: (CA05) Eliminar una mascota dado su id
+    Given path 'pet/', newPet.id
+    When method DELETE
+    Then status 200
+    
+    Given path 'pet'
+    When method GET
+    Then status 404
+ 
+ 
 
 
