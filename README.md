@@ -26,7 +26,11 @@ Requisitos básicos para ejecutar los tests de este proyecto:
 
 > git clone https://github.com/navialopez92/karate-petstore
 
+2. Entrar a la carpeta del repositorio clonado
+
 > cd karate-petstore
+
+3. Ejecutar los tests
 
 > mvn clean verify
 
