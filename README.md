@@ -22,9 +22,7 @@ Requisitos básicos para ejecutar los tests de este proyecto:
 
 ## Pasos para ejecutar los tests
 
-1. Clonar el repositorio:
-
-> abrir git bash
+1. Clonar el repositorio (abrir git bash)
 
 > git clone https://github.com/navialopez92/karate-petstore
 
